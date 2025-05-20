@@ -1,14 +1,25 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaNewspaper, FaCalendarAlt, FaImages, FaBullhorn, FaInfoCircle, FaStar, FaWikipediaW, FaUserCircle, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import { useAuth } from '../../contexts/AuthContext';
-import { FaNewspaper, FaCalendarAlt, FaImages, FaBullhorn, FaInfoCircle, FaStar, FaWikipediaW, FaSignInAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
 
-// Componente de cabeçalho principal do site
+// Componente de cabeçalho do site
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
-
+  
+  // Função para alternar o menu mobile
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+  
+  // Função para fechar o menu mobile
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+  
   // Função para lidar com o logout
   const handleLogout = async () => {
     try {
@@ -18,168 +29,211 @@ const Header = () => {
       console.error('Erro ao fazer logout:', error);
     }
   };
-
+  
   return (
     <HeaderContainer>
-      <LogoContainer>
-        <SiteLogo to="/">UniCEDUP</SiteLogo>
-        <SiteTagline>Jornal Digital do Grêmio Estudantil</SiteTagline>
-      </LogoContainer>
-      
-      <NavContainer>
-        <NavLink to="/noticias"><FaNewspaper /> Notícias</NavLink>
-        <NavLink to="/eventos"><FaCalendarAlt /> Eventos</NavLink>
-        <NavLink to="/galeria"><FaImages /> Galeria</NavLink>
-        <NavLink to="/avisos"><FaBullhorn /> Avisos</NavLink>
-        <NavLink to="/sobre"><FaInfoCircle /> Sobre</NavLink>
-        <NavLink to="/destaques"><FaStar /> Destaques</NavLink>
-        <NavLink to="/wikipedia"><FaWikipediaW /> Wikipedia</NavLink>
-      </NavContainer>
-      
-      <AuthContainer>
-        {currentUser ? (
-          <>
-            <UserInfo>
-              <FaUserCircle /> {currentUser.email}
-            </UserInfo>
-            <DashboardLink to="/dashboard">Painel</DashboardLink>
-            <LogoutButton onClick={handleLogout}>
-              <FaSignOutAlt /> Sair
-            </LogoutButton>
-          </>
-        ) : (
-          <LoginLink to="/login">
-            <FaSignInAlt /> Entrar
-          </LoginLink>
-        )}
-      </AuthContainer>
+      <HeaderContent>
+        <LogoContainer to="/" onClick={closeMobileMenu}>
+          <LogoText>UniCEDUP</LogoText>
+          <LogoSubtext>Jornal Digital</LogoSubtext>
+        </LogoContainer>
+        
+        <MobileMenuButton onClick={toggleMobileMenu}>
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </MobileMenuButton>
+        
+        <NavMenu mobileMenuOpen={mobileMenuOpen}>
+          <NavItem>
+            <NavLink to="/noticias" onClick={closeMobileMenu}>
+              <FaNewspaper /> Notícias
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/eventos" onClick={closeMobileMenu}>
+              <FaCalendarAlt /> Eventos
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/galeria" onClick={closeMobileMenu}>
+              <FaImages /> Galeria
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/avisos" onClick={closeMobileMenu}>
+              <FaBullhorn /> Avisos
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/wikipedia" onClick={closeMobileMenu}>
+              <FaWikipediaW /> Wikipedia
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/destaques" onClick={closeMobileMenu}>
+              <FaStar /> Destaques
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/sobre" onClick={closeMobileMenu}>
+              <FaInfoCircle /> Sobre
+            </NavLink>
+          </NavItem>
+          
+          {currentUser ? (
+            <>
+              <NavItem className="auth-item">
+                <NavLink to="/dashboard" onClick={closeMobileMenu}>
+                  <FaUserCircle /> Área do Grêmio
+                </NavLink>
+              </NavItem>
+              <NavItem className="auth-item">
+                <LogoutButton onClick={handleLogout}>
+                  <FaSignOutAlt /> Sair
+                </LogoutButton>
+              </NavItem>
+            </>
+          ) : (
+            <NavItem className="auth-item">
+              <NavLink to="/login" onClick={closeMobileMenu}>
+                <FaUserCircle /> Login
+              </NavLink>
+            </NavItem>
+          )}
+        </NavMenu>
+      </HeaderContent>
     </HeaderContainer>
   );
 };
 
 // Estilos usando styled-components
 const HeaderContainer = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  background-color: #1a4b8c;
+  background-color: var(--primary-dark);
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+`;
+
+const HeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
   
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
   }
 `;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled(Link)`
+  text-decoration: none;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-  
-  @media (min-width: 768px) {
-    align-items: flex-start;
-    margin-bottom: 0;
-  }
+  align-items: flex-start;
 `;
 
-const SiteLogo = styled(Link)`
-  font-size: 2rem;
+const LogoText = styled.h1`
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
+`;
+
+const LogoSubtext = styled.span`
+  font-size: 0.8rem;
+  opacity: 0.8;
+`;
+
+const MobileMenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
   color: white;
-  text-decoration: none;
+  font-size: 1.5rem;
+  cursor: pointer;
   
-  &:hover {
-    color: #a3c5ff;
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
 
-const SiteTagline = styled.span`
-  font-size: 0.9rem;
-  color: #a3c5ff;
+const NavMenu = styled.ul`
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  @media (max-width: 768px) {
+    display: ${props => (props.mobileMenuOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--primary-dark);
+  }
 `;
 
-const NavContainer = styled.nav`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
+const NavItem = styled.li`
+  margin: 0 0.5rem;
   
-  @media (min-width: 768px) {
+  &.auth-item {
+    margin-left: 1rem;
+    
+    @media (max-width: 768px) {
+      margin-left: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
     margin: 0;
+    width: 100%;
   }
 `;
 
 const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
   padding: 0.5rem;
-  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
   
   &:hover {
-    background-color: #2c5ea0;
+    color: var(--primary-lighter);
   }
-`;
-
-const AuthContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const UserInfo = styled.span`
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.9rem;
-`;
-
-const LoginLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  background-color: #2c5ea0;
   
-  &:hover {
-    background-color: #3a6eaf;
-  }
-`;
-
-const DashboardLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  background-color: #2c5ea0;
-  
-  &:hover {
-    background-color: #3a6eaf;
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 `;
 
 const LogoutButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  color: white;
-  background-color: #d32f2f;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.2s ease;
   
   &:hover {
-    background-color: #b71c1c;
+    color: var(--primary-lighter);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 `;
 

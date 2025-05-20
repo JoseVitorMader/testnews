@@ -161,3 +161,69 @@ To https://github.com/JoseVitorMader/testnews.git
 2025-05-20 14:00:15.329 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [3ms]
 2025-05-20 14:00:19.980 [info] > git check-ignore -v -z --stdin [3ms]
 2025-05-20 14:00:21.738 [info] > git check-ignore -v -z --stdin [7ms]
+2025-05-20 14:01:20.719 [info] > git add -A -- . [55147ms]
+2025-05-20 14:01:20.720 [info] warning: adding embedded git repository: .nvm
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> .nvm
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached .nvm
+hint: 
+hint: See "git help submodule" for more information.
+2025-05-20 14:01:23.613 [info] > git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file - [2884ms]
+2025-05-20 14:01:23.625 [info] > git config --get commit.template [3ms]
+2025-05-20 14:01:23.653 [info] > git config --get commit.template [12ms]
+2025-05-20 14:01:23.656 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2025-05-20 14:01:23.666 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/ubuntu/.git/refs/remotes/origin/master'
+2025-05-20 14:01:23.669 [info] > git rev-parse refs/remotes/origin/master [4ms]
+2025-05-20 14:01:23.686 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2025-05-20 14:01:24.313 [info] > git status -z -uall [637ms]
+2025-05-20 14:01:24.406 [info] > git merge-base refs/heads/master refs/remotes/origin/master [17ms]
+2025-05-20 14:01:24.415 [info] > git blame --root --incremental 7c6d2ba9ab28d6cdea92187fab41105f69ff8c54 -- .gitignore [36ms]
+2025-05-20 14:01:24.492 [info] > git diff --name-status -z --diff-filter=ADMR 51e1f7a7b14f98fb068814c1c88eb23daab76be7...refs/remotes/origin/master [78ms]
+2025-05-20 14:01:26.619 [info] > git check-ignore -v -z --stdin [64ms]
+2025-05-20 14:02:03.127 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [37297ms]
+2025-05-20 14:02:31.370 [info] > git ls-files --stage -- .gitignore [44ms]
+2025-05-20 14:02:31.385 [info] > git cat-file -s 24cdedf82f1b1bd6edaca14b7ca5b4d98868246e [5ms]
+2025-05-20 14:02:31.560 [info] > git show --textconv :.gitignore [23ms]
+2025-05-20 14:02:38.084 [info] > git check-ignore -v -z --stdin [51ms]
+2025-05-20 14:02:57.375 [info] > git push origin master:master [92972ms]
+2025-05-20 14:02:57.375 [info] To https://github.com/JoseVitorMader/testnews.git
+   51e1f7a..7c6d2ba  master -> master
+2025-05-20 14:02:57.400 [info] > git config --get commit.template [12ms]
+2025-05-20 14:02:57.401 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2025-05-20 14:02:57.423 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-05-20 14:02:58.432 [info] > git status -z -uall [1021ms]
+2025-05-20 14:02:58.454 [info] > git merge-base refs/heads/master refs/remotes/origin/master [4ms]
+2025-05-20 14:02:58.466 [info] > git diff --name-status -z --diff-filter=ADMR 7c6d2ba9ab28d6cdea92187fab41105f69ff8c54...refs/remotes/origin/master [4ms]
+2025-05-20 14:02:58.652 [info] > git config --get commit.template [11ms]
+2025-05-20 14:02:58.654 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2025-05-20 14:02:58.673 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [4ms]
+2025-05-20 14:02:59.107 [info] > git status -z -uall [445ms]
+2025-05-20 14:02:59.265 [info] > git check-ignore -v -z --stdin [24ms]
+2025-05-20 14:03:08.333 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [9706ms]
+2025-05-20 14:03:41.963 [info] > git config --get commit.template [10ms]
+2025-05-20 14:03:41.965 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2025-05-20 14:03:41.988 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [4ms]
+2025-05-20 14:03:42.147 [info] > git ls-files --stage -- .gitignore [24ms]
+2025-05-20 14:03:42.159 [info] > git cat-file -s 24cdedf82f1b1bd6edaca14b7ca5b4d98868246e [3ms]
+2025-05-20 14:03:42.331 [info] > git show --textconv :.gitignore [21ms]
+2025-05-20 14:03:42.402 [info] > git status -z -uall [427ms]
+2025-05-20 14:03:56.029 [info] > git config --get commit.template [9ms]
+2025-05-20 14:03:56.031 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2025-05-20 14:03:56.046 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [4ms]
+2025-05-20 14:03:56.449 [info] > git status -z -uall [412ms]
+2025-05-20 14:04:01.472 [info] > git config --get commit.template [9ms]
+2025-05-20 14:04:01.475 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2025-05-20 14:04:01.495 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2025-05-20 14:04:01.886 [info] > git status -z -uall [402ms]
+2025-05-20 14:04:08.996 [info] > git config --get commit.template [7ms]
+2025-05-20 14:04:08.999 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2025-05-20 14:04:09.015 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2025-05-20 14:04:09.392 [info] > git status -z -uall [388ms]

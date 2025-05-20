@@ -15,3 +15,4 @@
 2025-05-20 17:56:37.994 [info] [10.6.189.1][03f8ed36][ManagementConnection] New connection established.
 2025-05-20 17:56:40.537 [info] [10.6.189.1][d556f02c][ExtensionHostConnection] New connection established.
 2025-05-20 17:56:40.621 [info] [10.6.189.1][d556f02c][ExtensionHostConnection] <7576> Launched Extension Host Process.
+2025-05-20 18:01:23.703 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
