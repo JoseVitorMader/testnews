@@ -1,0 +1,25 @@
+[2025-05-20T17:10:59.466Z] info  code-server 4.100.2 9dd999ba78032163d606fadd531de5e1fcae5443
+[2025-05-20T17:10:59.499Z] info  Using user-data-dir /home/ubuntu/.local/share/code-server
+[2025-05-20T17:10:59.537Z] info  Using config file /home/ubuntu/.config/code-server/config.yaml
+[2025-05-20T17:10:59.537Z] info  HTTP server listening on http://0.0.0.0:8329/
+[2025-05-20T17:10:59.538Z] info    - Authentication is enabled
+[2025-05-20T17:10:59.539Z] info      - Using password from /home/ubuntu/.config/code-server/config.yaml
+[2025-05-20T17:10:59.539Z] info    - Not serving HTTPS
+[2025-05-20T17:10:59.539Z] info  Session server listening on /home/ubuntu/.local/share/code-server/code-server-ipc.sock
+[17:11:35] 
+
+
+
+
+[17:11:36] Extension host agent started.
+[17:11:36] Started initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.local/share/code-server/extensions
+[17:11:36] ComputeTargetPlatform: linux-x64
+[17:11:36] Completed initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.local/share/code-server/extensions
+[17:11:42] [10.6.189.1][f508145b][ManagementConnection] New connection established.
+[17:11:46] [10.6.189.1][60c831d6][ExtensionHostConnection] New connection established.
+[17:11:48] [10.6.189.1][60c831d6][ExtensionHostConnection] <3226> Launched Extension Host Process.
+[17:12:05] [10.6.189.1][f508145b][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:12:05] [10.6.189.1][60c831d6][ExtensionHostConnection] <3226> Extension Host Process exited with code: 0, signal: null.
+[17:56:37] [10.6.189.1][03f8ed36][ManagementConnection] New connection established.
+[17:56:40] [10.6.189.1][d556f02c][ExtensionHostConnection] New connection established.
+[17:56:40] [10.6.189.1][d556f02c][ExtensionHostConnection] <7576> Launched Extension Host Process.

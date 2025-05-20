@@ -1,0 +1,18 @@
+2025-05-20 13:56:42.188 [info] Extension host with pid 7576 started
+2025-05-20 13:56:42.193 [info] Lock '/home/ubuntu/.local/share/code-server/User/workspaceStorage/-24327117/vscode.lock': Lock acquired.
+2025-05-20 13:56:42.508 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-05-20 13:56:42.753 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-05-20 13:56:42.753 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-05-20 13:56:43.550 [info] Eager extensions activated
+2025-05-20 13:56:43.551 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-05-20 13:56:43.551 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-05-20 13:56:44.160 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-05-20 13:56:44.294 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-05-20 13:58:02.060 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-05-20 13:58:04.575 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-05-20 13:58:36.625 [warning] [Decorations] CAPPING events from decorations provider vscode.git 11589
+2025-05-20 13:58:51.112 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10001
+2025-05-20 13:58:53.613 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-05-20 13:59:26.352 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10001
+2025-05-20 13:59:28.870 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-05-20 13:59:42.945 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
