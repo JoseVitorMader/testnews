@@ -18,12 +18,14 @@ import { getStorage } from 'firebase/storage';
  * IMPORTANTE: Substitua estes valores pelos fornecidos no console do Firebase
  */
 const firebaseConfig = {
-  apiKey: "AIzaSyBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "unicedup-jornal.firebaseapp.com",
-  projectId: "unicedup-jornal",
-  storageBucket: "unicedup-jornal.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000000000"
+ apiKey: "AIzaSyAbKaUVFDUWgFcUZEMomLG5nDicG1SIr8g",
+  authDomain: "unicedup.firebaseapp.com",
+  databaseURL: "https://unicedup-default-rtdb.firebaseio.com",
+  projectId: "unicedup",
+  storageBucket: "unicedup.firebasestorage.app",
+  messagingSenderId: "877231460681",
+  appId: "1:877231460681:web:ae2cd51a6c53793c470a98",
+  measurementId: "G-9TNXHNGWRS"
 };
 
 // Inicializa o Firebase

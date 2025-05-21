@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Header from '../../components/layout/Header';
-import Footer from '../../components/layout/Footer';
+import Header from '../../../components/layout/Header';
+import Footer from '../../../components/layout/Footer';
 import { FaWikipediaW, FaSearch, FaBookOpen, FaHistory, FaLink } from 'react-icons/fa';
 
 // Componente da página Wikipedia
